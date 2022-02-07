@@ -1,11 +1,14 @@
 {
   "name": "w-al-saub-my-favourite-car",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng generate pipe",
+    "generatedirective": "ng generate directive",
     "test": "ng test"
   },
   "private": true,
