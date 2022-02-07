@@ -1,4 +1,6 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-card',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-
+  @Input() carModels?: Car;
   constructor() { }
 
   ngOnInit(): void {

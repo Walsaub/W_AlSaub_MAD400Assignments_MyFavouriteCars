@@ -1,1 +1,1 @@
-<p>content-list works!</p>
+<app-content-card *ngFor="let car of carModels; index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
