@@ -18,7 +18,8 @@ export class ContentListComponent implements OnInit {
         description: "mid-size American sport car manufactured by Chevrolet",
         creator: "Chevrolet",
         imgURL: "https://d3lp4xedbqa8a5.cloudfront.net/s3/digital-cougar-assets/whichcar/2019/04/24/-1/chevrolet-camaro-fronter.jpg",
-        type: "Pony Car"
+        type: "Pony Car",
+        tags: ["My most favourite car"]
       },
       {
         id: 1,
@@ -57,8 +58,7 @@ export class ContentListComponent implements OnInit {
         title: "993",
         description: "993 is the internal designation for the Porsche 911 model manufactured by Porsche",
         creator: "Porsche",
-        imgURL: "https://www.pcarmarket.com/static/media/uploads/galleries/photos/uploads/galleries/6083-porsche-993-black/.thumbnails/P1830054.jpg/P1830054-2040x1255.jpg",
-        type: "Sport car"
+        imgURL: "https://www.pcarmarket.com/static/media/uploads/galleries/photos/uploads/galleries/6083-porsche-993-black/.thumbnails/P1830054.jpg/P1830054-2040x1255.jpg"
       }];
 
   }

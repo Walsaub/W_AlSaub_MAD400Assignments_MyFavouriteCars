@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
+import { FilteredByTypePipe } from './filtered-by-type.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentCardComponent,
-    ContentListComponent
+    ContentListComponent,
+    FilteredByTypePipe
   ],
   imports: [
     BrowserModule
