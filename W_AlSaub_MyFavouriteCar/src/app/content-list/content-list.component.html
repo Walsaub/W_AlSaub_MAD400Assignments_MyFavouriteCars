@@ -1,6 +1,6 @@
-<app-content-card *ngFor="let car of (carModels | filteredByType : 'Pony Car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
-<app-content-card *ngFor="let car of (carModels | filteredByType : 'Sedan'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
-<app-content-card *ngFor="let car of (carModels | filteredByType : 'Sport car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
-<app-content-card *ngFor="let car of (carModels | filteredByType : 'Compact SUV'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
-<app-content-card *ngFor="let car of (carModels | filteredByType : 'Military off-roader'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
-<app-content-card *ngFor="let car of (carModels | filteredByType); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType : 'Pony Car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="pony-car"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType : 'Sedan'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="sedan"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType : 'Sport car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="sport-car"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType : 'Compact SUV'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="compact-SUV"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType : 'Military off-roader'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="military-off-roader"></app-content-card>
+<app-content-card *ngFor="let car of (carModels | filteredByType); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="no-type"></app-content-card>

@@ -1,0 +1,36 @@
+:host {
+  .pony-car {
+    color: orangered;
+    text-decoration: wavy;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  .sedan {
+    color: silver;
+    text-decoration: underline;
+    text-decoration-color: red;
+  }
+
+  .sport-car {
+    color: blue;
+    font-style: italic;
+  }
+
+  .compact-SUV {
+    color: darkorange;
+    font-weight: bold;
+  }
+
+  .military-off-roader {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: silver;
+  }
+
+  .no-type{
+      font-style:italic;
+      font-family: 'Ink Free';
+  }
+}
