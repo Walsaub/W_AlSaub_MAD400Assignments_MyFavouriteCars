@@ -63,6 +63,20 @@ export class ContentListComponent implements OnInit {
 
   }
 
+  search(sTerm: string): string {
+    let exist: boolean = false;
+    this.carModels.forEach(function (car) {
+      if (car.title == sTerm) {
+        exist = true
+      }
+    });
+    if (exist) {
+      return "The title you entered does exist";
+    } else {
+      return "The title you entered does not exist";
+    }
+  }
+
   ngOnInit(): void {
   }
 

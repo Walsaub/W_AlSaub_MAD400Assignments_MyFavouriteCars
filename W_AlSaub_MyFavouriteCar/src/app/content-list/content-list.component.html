@@ -1,3 +1,10 @@
+<div>
+  <input #searchTerm>
+  <button (click)="search(searchTerm.value)">Search</button>
+  <br />
+  <div> {{ search(searchTerm.value) }}</div>
+
+</div>
 <app-content-card *ngFor="let car of (carModels | filteredByType : 'Pony Car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="pony-car"></app-content-card>
 <app-content-card *ngFor="let car of (carModels | filteredByType : 'Sedan'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="sedan"></app-content-card>
 <app-content-card *ngFor="let car of (carModels | filteredByType : 'Sport car'); index as i; last as isLast" [carModels]="car" [class.is-last]="isLast" class="sport-car"></app-content-card>
