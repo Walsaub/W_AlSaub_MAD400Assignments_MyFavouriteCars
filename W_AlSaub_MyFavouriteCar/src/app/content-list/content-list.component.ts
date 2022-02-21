@@ -19,7 +19,7 @@ export class ContentListComponent implements OnInit {
         creator: "Chevrolet",
         imgURL: "https://d3lp4xedbqa8a5.cloudfront.net/s3/digital-cougar-assets/whichcar/2019/04/24/-1/chevrolet-camaro-fronter.jpg",
         type: "Pony Car",
-        tags: ["My most favourite car"]
+        tags: ["My most favourite car", "elegant design"]
       },
       {
         id: 1,

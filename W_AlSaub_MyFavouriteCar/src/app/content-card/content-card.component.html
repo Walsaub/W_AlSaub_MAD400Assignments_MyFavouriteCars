@@ -9,5 +9,10 @@
 </ng-template>
 <div class="description"> Description: {{ carModels ? carModels.description : '' }}</div>
 <div class="creator"> Make: {{ carModels ? carModels.creator: '' }}</div>
-<div appHoverAffect *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</div>
-<div *ngIf="carModels ? carModels.tags : null" class="tag"> Personal Info: {{ carModels ? carModels.tags: '' }}</div>
+<div appHoverAffect affect="underline" *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</div>
+<div *ngIf="carModels?.tags" class="tags">
+  Personal Info: <br />
+  <span appHoverAffect affect="bold"  class="tag" *ngFor="let tag of carModels?.tags">
+    {{ tag }}<br />
+  </span>
+</div>
