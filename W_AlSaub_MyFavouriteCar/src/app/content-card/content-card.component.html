@@ -9,5 +9,5 @@
 </ng-template>
 <div class="description"> Description: {{ carModels ? carModels.description : '' }}</div>
 <div class="creator"> Make: {{ carModels ? carModels.creator: '' }}</div>
-<div *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</div>
+<div appHoverAffect *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</div>
 <div *ngIf="carModels ? carModels.tags : null" class="tag"> Personal Info: {{ carModels ? carModels.tags: '' }}</div>
