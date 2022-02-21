@@ -7,7 +7,7 @@ import { Car } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-
+  
   carModels: Car[];
   constructor() {
 
@@ -34,7 +34,6 @@ export class ContentListComponent implements OnInit {
         title: "Bronco",
         description: "American Sport SUV manufactured by Ford",
         creator: "Ford",
-        imgURL: "https://www.thedrive.com/content/2020/07/Bronco_Sport_Exterior_01.jpg?quality=85&width=1920&quality=70",
         type: "Compact SUV"
       },
       {

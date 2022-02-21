@@ -1,5 +1,12 @@
 <h1 class="title">{{ carModels ? carModels.title: '' }}</h1>
-<div *ngIf="carModels ? carModels.imgURL : null" class="car-image" ><img [src]="carModels ? carModels.imgURL : ''" style="width:100%"></div>
+<div *ngIf="carModels ? carModels.imgURL : null; else elseBlock" class="car-image" >
+  <img [src]="carModels ? carModels.imgURL : ''" style="width:100%">
+</div>
+<ng-template #elseBlock>
+  <div class="car-image">
+    <img [src]="'https://easydrawingguides.com/wp-content/uploads/2017/01/How-to-Draw-a-cartoon-car-20.png'" style="width:100%">
+  </div>
+</ng-template>
 <div class="description"> Description: {{ carModels ? carModels.description : '' }}</div>
 <div class="creator"> Make: {{ carModels ? carModels.creator: '' }}</div>
 <div *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</div>
