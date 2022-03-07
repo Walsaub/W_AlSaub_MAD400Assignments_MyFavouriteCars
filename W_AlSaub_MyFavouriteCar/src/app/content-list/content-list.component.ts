@@ -76,6 +76,11 @@ export class ContentListComponent implements OnInit {
     }
   }
 
+  addCarToList(newCarOnList: Car): void {
+    this.carModels.push(newCarOnList);
+    this.carModels = [...this.carModels];
+  }
+
   ngOnInit(): void {
   }
 

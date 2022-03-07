@@ -1,0 +1,31 @@
+<div>
+  ID: <input #id type="number" />
+</div><br />
+
+<div>
+  Title: <input #title/>
+</div><br />
+
+<div>
+  Description: <input #description/>
+</div><br />
+
+<div>
+  Creator: <input #creator />
+</div><br />
+
+<div>
+  Img url:<input #imgURL />
+</div><br />
+
+<div>
+  Type: <input #type/>
+</div><br />
+
+<div>
+  Tags: <input #tags />
+</div><br />
+
+<div>
+  <button (click)="addCar(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Car</button>
+</div><br />
