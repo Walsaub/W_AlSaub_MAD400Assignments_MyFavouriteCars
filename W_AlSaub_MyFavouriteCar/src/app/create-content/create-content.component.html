@@ -3,11 +3,11 @@
 </div><br />
 
 <div>
-  Title: <input #title/>
+  Title: <input #title />
 </div><br />
 
 <div>
-  Description: <input #description/>
+  Description: <input #description />
 </div><br />
 
 <div>
@@ -19,7 +19,7 @@
 </div><br />
 
 <div>
-  Type: <input #type/>
+  Type: <input #type />
 </div><br />
 
 <div>
@@ -28,4 +28,5 @@
 
 <div>
   <button (click)="addCar(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Car</button>
+  <br /><span *ngIf="success === false" style="color: red; font-weight: bold">The addition was not successful</span>
 </div><br />
