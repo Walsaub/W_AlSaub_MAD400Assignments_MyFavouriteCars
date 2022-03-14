@@ -14,4 +14,19 @@ export class CarService {
   getContentObs(): Observable<Car[]> {
     return of(carModels);
   }
+
+  getCarByIdObs(id: number): Observable<Car> {
+    let carByid: Car = {
+      id: 100,
+      title: "",
+      description: "",
+      creator: ""
+    };
+    carModels.forEach(function (car) {
+      if (car.id == id) {
+        carByid = car;
+      }
+    });
+    return of(carByid);
+  }
 }

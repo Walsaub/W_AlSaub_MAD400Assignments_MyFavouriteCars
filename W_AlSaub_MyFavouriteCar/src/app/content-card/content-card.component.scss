@@ -1,8 +1,15 @@
 :host {
   border: 1px;
   font-size: 150%;
-  .title{
-      border: 2px solid black;
+
+  .title {
+    border: 2px solid black;
   }
 
+}
+
+:host.selectedById div:first-child {
+  width: 95%;
+  padding: 15px;
+  box-shadow: 10px 10px 5px grey;
 }
