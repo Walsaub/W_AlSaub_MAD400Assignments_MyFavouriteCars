@@ -18,6 +18,7 @@ export class CarService {
   }
 
   getCarByIdObs(id: number): Observable<Car> {
+    let exist: boolean = false;
     let carByid: Car = {
       id: 100,
       title: "",
@@ -27,9 +28,15 @@ export class CarService {
     carModels.forEach(function (car) {
       if (car.id == id) {
         carByid = car;
+        exist = true;
       }
     });
-    this.messageService.add("Content Item at id: " + id + " loaded!");
+    if (exist) {
+      this.messageService.add("Content Item at id: " + id + " loaded!");
+    } else {
+      this.messageService.add("Content Item at id: " + id + " does not exist.");
+    }
+    
     return of(carByid);
   }
 }
