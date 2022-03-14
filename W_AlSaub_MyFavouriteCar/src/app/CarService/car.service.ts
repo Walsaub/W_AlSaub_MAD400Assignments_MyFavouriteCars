@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Car } from '../helper-files/content-interface';
 import { carModels } from '../helper-files/contentDb';
+import { MessageService } from '../message.service';
 
 
 @Injectable({
@@ -9,9 +10,10 @@ import { carModels } from '../helper-files/contentDb';
 })
 export class CarService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   getContentObs(): Observable<Car[]> {
+    this.messageService.add("Content array loaded!");
     return of(carModels);
   }
 
@@ -27,6 +29,7 @@ export class CarService {
         carByid = car;
       }
     });
+    this.messageService.add("Content Item at id: " + id + " loaded!");
     return of(carByid);
   }
 }
