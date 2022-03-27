@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Car } from '../helper-files/content-interface';
 import { carModels } from '../helper-files/contentDb';
 import { MessageService } from '../message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,33 +11,23 @@ import { MessageService } from '../message.service';
 })
 export class CarService {
 
-  constructor(private messageService: MessageService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({'Content-type': 'application/json'})
+  };
 
-  getContentObs(): Observable<Car[]> {
-    this.messageService.add("Content array loaded!");
-    return of(carModels);
+  constructor(private http: HttpClient) { }
+
+  getContent(): Observable<Car[]> {
+    console.log("Getting the content from the server");
+    return this.http.get<Car[]>("api/content");
   }
 
-  getCarByIdObs(id: number): Observable<Car> {
-    let exist: boolean = false;
-    let carByid: Car = {
-      id: 100,
-      title: "",
-      description: "",
-      creator: ""
-    };
-    carModels.forEach(function (car) {
-      if (car.id == id) {
-        carByid = car;
-        exist = true;
-      }
-    });
-    if (exist) {
-      this.messageService.add("Content Item at id: " + id + " loaded!");
-    } else {
-      this.messageService.add("Content Item at id: " + id + " does not exist.");
-    }
-    
-    return of(carByid);
+  addContent(newContentItem: Car): Observable<Car> {
+    console.log("Adding a new pokemon: ", newContentItem);
+    return this.http.post<Car>("api/content", newContentItem, this.httpOptions);
+  }
+
+  updateContent(contentItem: Car): Observable<any> {
+    return this.http.put("api/content", contentItem, this.httpOptions);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarService } from './CarService/Car.service';
 
 import { Car } from './helper-files/content-interface';
@@ -8,25 +8,23 @@ import { Car } from './helper-files/content-interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'W_AlSaub_MyFavouriteCar';
-  car?: Car;
-  searchById?: Car;
+  cars: Car[];
 
   constructor(private carService: CarService) {
-    this.car;
-    this.carService;
+    this.cars = [];
   }
 
   ngOnInit(): void {
-    this.carService.getCarByIdObs(3).subscribe(selectedCar => {
-      this.car = selectedCar;
+    this.getContentFromServer();
+  }
+
+  getContentFromServer(): void {
+    this.carService.getContent().subscribe(cararray => {
+      console.log("Got the content from the server: ", cararray);
+      this.cars = cararray;
     });
   }
 
-  selectCarById(id: string): void {
-    this.carService.getCarByIdObs(parseInt(id)).subscribe(selectedCar => {
-      this.searchById = selectedCar;
-    });
-  }
 }

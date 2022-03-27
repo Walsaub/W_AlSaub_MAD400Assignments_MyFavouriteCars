@@ -31,9 +31,6 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.carService.getContentObs().subscribe(cararray => {
-      this.cars = cararray;
-    });
   }
 
 }
