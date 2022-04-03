@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../CarService/Car.service';
 
 import { Car } from '../helper-files/content-interface';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-content-list',
@@ -11,7 +12,7 @@ import { Car } from '../helper-files/content-interface';
 export class ContentListComponent implements OnInit {
   cars: Car[];
 
-  constructor(private carService: CarService) {
+  constructor(private carService: CarService, private messageService: MessageService) {
     this.cars = [];
 
   }
@@ -31,6 +32,25 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.carService.getContent().subscribe(listOfCars => {
+      this.cars = listOfCars;
+      this.messageService.add("List loaded successfully!");
+    });
+  }
+
+  addContentToList(newContent: Car): void {
+    this.messageService.add("New content added and sent to list, id number is " + newContent.id)
+    this.carService.getContent().subscribe(listOfCars => {
+      this.cars = listOfCars;
+      this.messageService.add("New content added and displayed on the list!");
+    });
+  }
+
+  updateContentOnList(): void {
+    this.carService.getContent().subscribe(listOfCars => {
+      this.cars = listOfCars;
+      this.messageService.add("Content on the list updated!");
+    });
   }
 
 }

@@ -16,6 +16,6 @@ export class InMemoryDataService implements InMemoryDbService  {
   }
 
   getId(content: Car[]): number {
-    return content.length > 0 ? Math.max(...content.map(c => { return c.id ?? 0 })) + 1 : 2000;
+    return content.length > 0 ? Math.max(...content.map(c => { return c.id ?? 0 })) + 1 : 0;
   }
 }

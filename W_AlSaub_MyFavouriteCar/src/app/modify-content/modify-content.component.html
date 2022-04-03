@@ -1,35 +1,38 @@
 <div>
-  Title: <input #title />
+  ID: <input [(ngModel)]="tempid" type="number">
+</div>
+
+<div>
+  Title: <input [(ngModel)]="newContent.title" />
 </div>
 <br />
 
 <div>
-  Description: <input #description />
+  Description: <input [(ngModel)]="newContent.description" />
 </div>
 <br />
 
 <div>
-  Creator: <input #creator />
+  Creator: <input [(ngModel)]="newContent.creator" />
 </div>
 <br />
 
 <div>
-  Img url:<input #imgURL />
+  Img url:<input [(ngModel)]="newContent.imgURL" />
 </div>
 <br />
 
 <div>
-  Type: <input #type />
+  Type: <input [(ngModel)]="newContent.type" />
 </div>
 <br />
 
 <div>
-  Tags: <input #tags />
+  Tags: <input [(ngModel)]="temptags" />
 </div>
 <br />
 
 <div>
-  <button (click)="(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Car</button>
-  <br /><span *ngIf="success === false" style="color: red; font-weight: bold">The addition was not successful</span>
+  <button (click)="modifyOrAddItemToParent()">{{(tempid !== "") ? "Update Content": "Add Content"}}</button>
 </div>
 <br />

@@ -1,4 +1,4 @@
-<app-modify-content></app-modify-content>
+<app-modify-content (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentOnList()"></app-modify-content>
 <div>
   <input #searchTerm>
   <button (click)="search(searchTerm.value)">Search</button>
