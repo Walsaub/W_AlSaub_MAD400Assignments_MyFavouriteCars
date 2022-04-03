@@ -32,42 +32,49 @@
 </div>
 <br />-->
 
-<div>
-  ID: <input #tempid type="number">
-</div>
+<mat-form-field appearance="fill">
+  <mat-label>ID: </mat-label>
+  <input matInput placeholder="0" #tempid type="number">
+</mat-form-field>
+<br/>
+
+<mat-form-field appearance="fill">
+  <mat-label>Title: </mat-label>
+  <input matInput placeholder="" #newContent.title />
+</mat-form-field>
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Description: </mat-label>
+  <input matInput placeholder="" #newContent.description />
+</mat-form-field>
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Creator: </mat-label>
+  <input matInput placeholder="" #newContent.creator />
+</mat-form-field>
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Img url: </mat-label>
+  <input matInput placeholder="" #newContent.imgURL />
+</mat-form-field>
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Type: </mat-label>
+  <input matInput placeholder="" #newContent.type />
+</mat-form-field>
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Tags: </mat-label>
+  <input matInput placeholder="" #temptags />
+</mat-form-field>
 <br />
 
 <div>
-  Title: <input #newContent.title />
-</div>
-<br />
-
-<div>
-  Description: <input #newContent.description />
-</div>
-<br />
-
-<div>
-  Creator: <input #newContent.creator />
-</div>
-<br />
-
-<div>
-  Img url:<input #newContent.imgURL />
-</div>
-<br />
-
-<div>
-  Type: <input #newContent.type />
-</div>
-<br />
-
-<div>
-  Tags: <input #temptags />
-</div>
-<br />
-
-<div>
-  <button (click)="modifyOrAddItemToParent()">Add Car</button>
+  <button mat-raised-button (click)="modifyOrAddItemToParent()">Add Car</button>
 </div>
 <br />

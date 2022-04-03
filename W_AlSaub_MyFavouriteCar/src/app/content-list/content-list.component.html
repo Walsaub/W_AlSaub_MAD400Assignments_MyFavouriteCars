@@ -1,7 +1,9 @@
 <app-modify-content (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentOnList()"></app-modify-content>
 <div>
-  <input #searchTerm>
-  <button (click)="search(searchTerm.value)">Search</button>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="0" #searchTerm>
+  </mat-form-field>
+  <button mat-raised-button (click)="search(searchTerm.value)">Search</button>
   <br />
   <div> {{ search(searchTerm.value) }}</div>
 
