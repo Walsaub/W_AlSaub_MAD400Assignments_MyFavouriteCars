@@ -1,4 +1,4 @@
-<div>
+<!--<div>
   ID: <input [(ngModel)]="tempid" type="number">
 </div>
 
@@ -30,9 +30,44 @@
 <div>
   Tags: <input [(ngModel)]="temptags" />
 </div>
+<br />-->
+
+<div>
+  ID: <input #tempid type="number">
+</div>
 <br />
 
 <div>
-  <button (click)="modifyOrAddItemToParent()">{{(tempid !== "") ? "Update Content": "Add Content"}}</button>
+  Title: <input #newContent.title />
+</div>
+<br />
+
+<div>
+  Description: <input #newContent.description />
+</div>
+<br />
+
+<div>
+  Creator: <input #newContent.creator />
+</div>
+<br />
+
+<div>
+  Img url:<input #newContent.imgURL />
+</div>
+<br />
+
+<div>
+  Type: <input #newContent.type />
+</div>
+<br />
+
+<div>
+  Tags: <input #temptags />
+</div>
+<br />
+
+<div>
+  <button (click)="modifyOrAddItemToParent()">Add Car</button>
 </div>
 <br />
