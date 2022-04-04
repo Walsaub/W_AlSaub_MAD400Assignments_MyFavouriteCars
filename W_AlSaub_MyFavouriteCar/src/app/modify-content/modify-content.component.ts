@@ -1,9 +1,14 @@
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CarService } from '../CarService/Car.service';
+import { DialogAddContentComponent } from '../dialog-add-content/dialog-add-content.component';
 
 import { Car } from '../helper-files/content-interface';
 
+export interface DialogData {
+
+}
 
 @Component({
   selector: 'app-modify-content',
@@ -18,7 +23,7 @@ export class ModifyContentComponent implements OnInit {
   @Output() updateContentEvent: EventEmitter<any> = new EventEmitter<any>();
   newCar?: Car;
 
-  constructor(private carService: CarService) {
+  constructor(private carService: CarService, private dialog: MatDialog) {
     this.newContent = { title: '', description: '', creator: '' };
   }
 
@@ -44,6 +49,17 @@ export class ModifyContentComponent implements OnInit {
         this.temptags = "";
       });
     }
+  }
+
+  openDialog() {
+    let dialogRef = this.dialog.open(DialogAddContentComponent, {
+      data: {newContent: this.newContent}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == "true") {
+        this.modifyOrAddItemToParent();
+      }
+    });
   }
 
   /*addCarToList(newContentItem: Car): void {

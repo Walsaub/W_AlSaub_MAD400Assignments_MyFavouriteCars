@@ -13,6 +13,8 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogAddContentComponent } from './dialog-add-content/dialog-add-content.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { MatInputModule } from '@angular/material/input';
     FilteredByTypePipe,
     HoverAffectDirective,
     MessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    DialogAddContentComponent
   ],
+  entryComponents: [DialogAddContentComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -33,7 +37,8 @@ import { MatInputModule } from '@angular/material/input';
     }),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
