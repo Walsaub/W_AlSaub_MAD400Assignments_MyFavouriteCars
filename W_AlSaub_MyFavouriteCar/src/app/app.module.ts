@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { DialogAddContentComponent } from './dialog-add-content/dialog-add-content.component';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module';
     MessagesComponent,
     ModifyContentComponent,
     DialogAddContentComponent,
-    ContentDetailComponent
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [DialogAddContentComponent],
   imports: [
