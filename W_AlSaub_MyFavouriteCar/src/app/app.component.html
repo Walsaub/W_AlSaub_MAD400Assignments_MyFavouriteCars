@@ -1,4 +1,3 @@
-
 <!--<div>
   Enter the Id that you are looking for: <input #id type="number" />
 </div>
@@ -14,5 +13,14 @@
 <!--<app-content-card car [carModels]="car" class="selectedById"></app-content-card>
 <br />-->
 <app-messages></app-messages>
-<br/>
-<app-content-list></app-content-list>
+<br />
+
+<a routerLink="content" routerLinkActive="active"
+   [routerLinkActiveOptions]="{ exact: true }">
+  Content List
+</a>
+<br />
+
+<br />
+<router-outlet></router-outlet>
+

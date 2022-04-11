@@ -8,14 +8,9 @@
       <img mat-card-image [src]="'https://easydrawingguides.com/wp-content/uploads/2017/01/How-to-Draw-a-cartoon-car-20.png'" style="width:100%">
     </div>
   </ng-template>
-  <mat-card-content class="description"> Description: {{ carModels ? carModels.description : '' }}</mat-card-content>
-  <mat-card-content class="creator"> Make: {{ carModels ? carModels.creator: '' }}</mat-card-content>
-  <mat-card-content appHoverAffect affect="underline" *ngIf="carModels ? carModels.type : null" class="type"> Class: {{ carModels ? carModels.type: '' }}</mat-card-content>
-  <mat-card-content *ngIf="carModels?.tags" class="tags">
-    Personal Info: <br />
-    <mat-list appHoverAffect affect="bold" class="tag" *ngFor="let tag of carModels?.tags">
-      <mat-list-item>{{ tag }}</mat-list-item>
-      <mat-divider></mat-divider>
-    </mat-list>
+  <mat-card-content class="details">
+    <a [routerLink]="['/content', carModels?.id]" routerLinkActive="active">
+      Car Details
+    </a>
   </mat-card-content>
 </mat-card>

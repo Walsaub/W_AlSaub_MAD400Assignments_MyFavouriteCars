@@ -1,0 +1,29 @@
+<div *ngIf="individualCar" class="car-{{individualCar?.id}}">
+  <h1 class="content-card-title">{{ individualCar.title }}</h1>
+  <div *ngIf="individualCar ? individualCar.imgURL : null; else elseBlock" class="content-card-image">
+    <img [src]="individualCar ? individualCar.imgURL : ''" style="width:100%">
+  </div>
+  <ng-template #elseBlock>
+    <div class="content-card-image">
+      <img [src]="'https://easydrawingguides.com/wp-content/uploads/2017/01/How-to-Draw-a-cartoon-car-20.png'" style="width:100%">
+    </div>
+  </ng-template>
+  <br />
+  <div class="content-card-description"> Description: <br /> <br /> &nbsp;{{ individualCar ? individualCar.description : '' }}</div>
+  <br />
+  <div class="content-card-creator"> Make: <br /><br />  &nbsp; {{ individualCar ? individualCar.creator: '' }}</div>
+  <br />
+  <div appHoverAffect affect="underline" *ngIf="individualCar ? individualCar.type : null" class="content-card-type"> Class: <br /><br />  &nbsp;{{ individualCar ? individualCar.type: '' }}</div>
+  <br />
+  <div *ngIf="individualCar?.tags" class="content-card-tags">
+    Personal Info: <br />
+    <ul appHoverAffect affect="bold" class="content-card-tag" *ngFor="let tag of individualCar?.tags">
+      <li>{{ tag }}</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!individualCar" class="not-found">
+  Car at that id does not exist
+</div>
+

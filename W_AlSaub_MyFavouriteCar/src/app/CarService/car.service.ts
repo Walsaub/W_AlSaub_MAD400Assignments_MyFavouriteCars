@@ -30,4 +30,9 @@ export class CarService {
   updateContent(contentItem: Car): Observable<any> {
     return this.http.put("api/content", contentItem, this.httpOptions);
   }
+
+  getContentItem(id: number): Observable<Car> {
+    console.log("Retrieving OBSERVABLE content item");
+    return this.http.get<Car>("api/content/" + id);
+  }
 }

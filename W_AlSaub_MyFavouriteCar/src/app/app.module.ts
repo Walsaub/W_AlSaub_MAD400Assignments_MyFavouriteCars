@@ -18,6 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { DialogAddContentComponent } from './dialog-add-content/dialog-add-content.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { DialogAddContentComponent } from './dialog-add-content/dialog-add-conte
     HoverAffectDirective,
     MessagesComponent,
     ModifyContentComponent,
-    DialogAddContentComponent
+    DialogAddContentComponent,
+    ContentDetailComponent
   ],
   entryComponents: [DialogAddContentComponent],
   imports: [
@@ -44,7 +47,8 @@ import { DialogAddContentComponent } from './dialog-add-content/dialog-add-conte
     MatDialogModule,
     MatCardModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

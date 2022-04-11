@@ -1,0 +1,45 @@
+:host {
+  h1 {
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+  }
+
+  .content-card-image {
+    padding: 10px;
+    border: 5px solid red;
+  }
+
+  .content-card-description {
+    font-size: 25px;
+  }
+
+  .content-card-description:first-line {
+    font-weight: bold;
+  }
+
+  .content-card-creator {
+    font-size: 25px;
+  }
+
+  .content-card-creator:first-line {
+    font-weight: bold;
+  }
+
+  .content-card-type {
+    font-size: 25px;
+  }
+
+  .content-card-type:first-line {
+    font-weight: bold;
+  }
+
+  .content-card-tags {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .content-card-tag {
+    font-weight: normal;
+  }
+}
