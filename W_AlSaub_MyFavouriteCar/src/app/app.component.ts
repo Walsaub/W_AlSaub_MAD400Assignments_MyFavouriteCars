@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from './CarService/Car.service';
 
 import { Car } from './helper-files/content-interface';
+import { LogUpdateService } from './log-update.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,13 @@ export class AppComponent implements OnInit {
   title = 'W_AlSaub_MyFavouriteCar';
   cars: Car[];
 
-  constructor(private carService: CarService) {
+  constructor(private carService: CarService, private logService: LogUpdateService) {
     this.cars = [];
   }
 
   ngOnInit(): void {
     this.getContentFromServer();
+    this.logService.init();
   }
 
   getContentFromServer(): void {
