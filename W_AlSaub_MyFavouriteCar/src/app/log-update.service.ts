@@ -16,7 +16,7 @@ export class LogUpdateService {
           console.log(`Downloading new app version: ${event.version.hash}`);
           break;
         case 'VERSION_READY':
-          let snackBarRef = this.snackBar.open("New app version ready for use", "Update");
+          let snackBarRef = this.snackBar.open("New app version ready for use:", "Update", { duration: 600000 });
 
           snackBarRef.afterDismissed().subscribe(() => {
             console.log('New app version was downloaded');

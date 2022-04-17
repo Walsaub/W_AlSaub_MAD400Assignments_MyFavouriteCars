@@ -1,4 +1,9 @@
+import { ApplicationRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
+import { interval } from 'rxjs';
+import { first } from 'rxjs';
+import { concat } from 'rxjs/operators';
 /*
  * I dont know why it is not seeing the CarService when I use stackblitz.com,
  * but when I start it localy it is working with no errors.
@@ -17,13 +22,22 @@ export class AppComponent implements OnInit {
   title = 'W_AlSaub_MyFavouriteCar';
   cars: Car[];
 
-  constructor(private carService: CarService, private logService: LogUpdateService) {
+  constructor(private carService: CarService,
+    private logService: LogUpdateService,
+    private appRef: ApplicationRef,
+    private updates: SwUpdate) {
     this.cars = [];
   }
 
   ngOnInit(): void {
     this.getContentFromServer();
     this.logService.init();
+
+    const appIsStable$ = this.appRef.isStable.pipe(first(isStable => isStable === true));
+    const everyHalfHour$ = interval(30 * 60 * 1000);
+    const everyHalfHourOnceAppIsStable$ = concat(appIsStable$, everyHalfHour$);
+    everyHalfHourOnceAppIsStable$.subscribe(() => this.updates.checkForUpdate());
+
   }
 
   getContentFromServer(): void {
