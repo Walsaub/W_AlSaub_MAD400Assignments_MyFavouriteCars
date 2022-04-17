@@ -4,8 +4,8 @@
     "\\W_AlSaub_MyFavouriteCar",
     "\\W_AlSaub_MyFavouriteCar\\src",
     "\\W_AlSaub_MyFavouriteCar\\src\\app",
-    "\\W_AlSaub_MyFavouriteCar\\src\\app\\content-detail"
+    "\\W_AlSaub_MyFavouriteCar\\src\\app\\content-card"
   ],
-  "SelectedNode": "\\W_AlSaub_MyFavouriteCar\\src\\app\\content-detail\\content-detail.component.ts",
+  "SelectedNode": "\\W_AlSaub_MyFavouriteCar\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
